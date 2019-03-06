@@ -31,6 +31,19 @@ public class USACO {
         instr.close();
         System.out.println(past);
         System.out.println(stomp);
+        for (int i = 0; i < N; i++) {
+            int[] elevations = new int[9];
+            int spot = 0;
+            for (int j = -1; j < 2; j++) {
+                for (int k = -1; k < 2; k++) {
+                    elevations[spot] = pasture[stompDig[i][0] + j][stompDig[i][1] + k];
+                    System.out.print(elevations[spot] + " ");
+                    spot++;
+                }
+                System.out.println();
+            }
+            Sorts.insertionSort(elevations);
+        }
         return 6;
     }
     public static int silver(String myFile) {
