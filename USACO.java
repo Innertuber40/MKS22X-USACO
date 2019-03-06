@@ -57,12 +57,15 @@ public class USACO {
         for (int i = 0; i < R; i++) {
             for (int j = 0; j < C; j++) {
                 pasture[i][j] = E - pasture[i][j];
-                System.out.print(pasture[i][j] + " ");
+                if (pasture[i][j] > 0) {
+                    depths += pasture[i][j];
+                }
+                //System.out.print(pasture[i][j] + " ");
 
             }
-            System.out.println();
+            //System.out.println();
         }
-        return 6;
+        return 72 * 72 * depths;
     }
     public static int silver(String myFile) {
         return 6;
