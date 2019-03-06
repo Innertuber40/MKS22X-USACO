@@ -29,20 +29,38 @@ public class USACO {
             stomp += "\n";
         }
         instr.close();
-        System.out.println(past);
-        System.out.println(stomp);
+        //System.out.println(past);
+        //System.out.println(stomp);
         for (int i = 0; i < N; i++) {
             int[] elevations = new int[9];
             int spot = 0;
             for (int j = -1; j < 2; j++) {
                 for (int k = -1; k < 2; k++) {
                     elevations[spot] = pasture[stompDig[i][0] + j][stompDig[i][1] + k];
-                    System.out.print(elevations[spot] + " ");
+                    //System.out.print(elevations[spot] + " ");
                     spot++;
                 }
-                System.out.println();
+                //System.out.println();
             }
             Sorts.insertionSort(elevations);
+            for (int l = 0; l < stompDig[i][2]; l++) {
+                for (int j = -1; j < 2; j++) {
+                    for (int k = -1; k < 2; k++) {
+                        if (pasture[stompDig[i][0] + j][stompDig[i][1] + k] == elevations[8] - l) {
+                            pasture[stompDig[i][0] + j][stompDig[i][1] + k]--;
+                        }
+                    }
+                }
+            }
+        }
+        int depths = 0;
+        for (int i = 0; i < R; i++) {
+            for (int j = 0; j < C; j++) {
+                pasture[i][j] = E - pasture[i][j];
+                System.out.print(pasture[i][j] + " ");
+
+            }
+            System.out.println();
         }
         return 6;
     }
