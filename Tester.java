@@ -15,7 +15,7 @@ public class Tester {
             System.out.println(e);
         }
         try {
-            USACO.silver("testCases/ctravel.1.in");
+            System.out.println(USACO.silver("testCases/ctravel.1.in"));
         } catch (FileNotFoundException e) {
             System.out.println(e);
         }

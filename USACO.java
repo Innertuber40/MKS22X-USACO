@@ -82,9 +82,9 @@ public class USACO {
         String past = "";
         for (int i = 0; i < N; i++) {
             String thisLine = field.nextLine();
-            System.out.println(thisLine);
+            //System.out.println(thisLine);
             for (int j = 0; j < M; j++) {
-                System.out.println(".");
+                //System.out.println(".");
                 pasture[i][j] = thisLine.charAt(j);
                 past = past + pasture[i][j] + " ";
             }
@@ -98,6 +98,32 @@ public class USACO {
         //System.out.println(past);
         //System.out.println(R1);
         //System.out.println(C2);
-        return 6;
+        return solver(R1, C1, R2, C2, 0, 0, T, pasture);
     }
+    private static int solver(int y, int x, int R2, int C2, int count, int time, int max, char[][] pasture) {
+		if (y == R2 && x == C2) {
+			count++;
+        }
+        if (time < max)
+		if (pasture[y - 1][x - 1] == '.') {
+            if (x < pasture[0].length) {
+                int right = solver(y, x + 1, R2, C2, 0, time + 1, max, pasture);
+                count += right;
+            }
+            if (x > 1) {
+                int left = solver(y, x - 1, R2, C2, 0, time + 1, max, pasture);
+                count += left;
+            }
+            if (y < pasture.length) {
+                int down = solver(y + 1, x, R2, C2, 0, time + 1, max, pasture);
+                count += down;
+            }
+            if (y > 1) {
+                int up = solver(y - 1, x, R2, C2, 0, time + 1, max, pasture);
+                count += up;
+            }
+		}
+		return count;
+	}
+    
 }
