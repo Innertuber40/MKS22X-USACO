@@ -16,6 +16,7 @@ public class Tester {
             System.out.println(e);
         }
         try {
+            //System.out.println(USACO.silver("testCases/ctravel.2.in"));
             System.out.println("Silver:");
             for (int i = 1; i < 6; i++) {
                 File checkPlus = new File("testCases/ctravel." + i + ".out");
