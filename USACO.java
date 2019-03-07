@@ -76,8 +76,8 @@ public class USACO {
         field.close();
         field = new Scanner(toAnalyze);
         field.nextLine();
-        System.out.println(N);
-        System.out.println(M);
+        //System.out.println(N);
+        //System.out.println(M);
         char[][] pasture = new char[N][M];
         String past = "";
         for (int i = 0; i < N; i++) {
@@ -95,9 +95,9 @@ public class USACO {
         int R2 = field.nextInt();
         int C2 = field.nextInt();
         field.close();
-        System.out.println(past);
-        System.out.println(R1);
-        System.out.println(C2);
+        //System.out.println(past);
+        //System.out.println(R1);
+        //System.out.println(C2);
         return 6;
     }
 }
