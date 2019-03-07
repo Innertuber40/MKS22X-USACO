@@ -67,7 +67,37 @@ public class USACO {
         }
         return 72 * 72 * depths;
     }
-    public static int silver(String myFile) {
+    public static int silver(String myFile) throws FileNotFoundException {
+        File toAnalyze = new File(myFile);
+        Scanner field = new Scanner(toAnalyze);
+        int N = field.nextInt();
+        int M = field.nextInt();
+        int T = field.nextInt();
+        field.close();
+        field = new Scanner(toAnalyze);
+        field.nextLine();
+        System.out.println(N);
+        System.out.println(M);
+        char[][] pasture = new char[N][M];
+        String past = "";
+        for (int i = 0; i < N; i++) {
+            String thisLine = field.nextLine();
+            System.out.println(thisLine);
+            for (int j = 0; j < M; j++) {
+                System.out.println(".");
+                pasture[i][j] = thisLine.charAt(j);
+                past = past + pasture[i][j] + " ";
+            }
+            past += "\n";
+        }
+        int R1 = field.nextInt();
+        int C1 = field.nextInt();
+        int R2 = field.nextInt();
+        int C2 = field.nextInt();
+        field.close();
+        System.out.println(past);
+        System.out.println(R1);
+        System.out.println(C2);
         return 6;
     }
 }

@@ -14,5 +14,10 @@ public class Tester {
         } catch (FileNotFoundException e) {
             System.out.println(e);
         }
+        try {
+            USACO.silver("testCases/ctravel.1.in");
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        }
     }
 }
